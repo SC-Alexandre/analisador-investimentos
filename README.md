@@ -4,9 +4,10 @@
 Aplicação web construída para a disciplina de Engenharia Econômica com o objetivo de apoiar a tomada de decisão de um profissional de engenharia de software: **Desenvolver uma funcionalidade agora ou adiar sua entrega**. A ferramenta compara o desembolso inicial e os benefícios futuros de duas alternativas utilizando o cálculo do **Valor Presente Líquido (VPL)**.
 
 ## 👥 Integrantes da Equipe
-*   Alexandre Santos
-*   José Mauro
-*   Pedro Queiroz
+*   [Alexandre] (https://github.com/SC-Alexandre)
+*   [José Mauro] (https://github.com/JMauro10)
+*   [Lucas Lopes] (https://github.com/LimpotRed)
+*   [Pedro Queiroz] (https://github.com/TomDaik)
 
 ## 🛠 Tecnologia
 - **Interface e Lógica:** HTML5, CSS3 e JavaScript puro (Vanilla JS).
