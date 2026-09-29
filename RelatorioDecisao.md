@@ -1,57 +1,85 @@
-Relatório de Decisão de Engenharia de Software
+# Relatório de Decisão de Engenharia de Software
 
-Equipe: Alexandre Santos, José Mauro, Lucas Lopes, Pedro Queiroz
+**Equipe:** Alexandre Santos, José Mauro, Lucas Lopes, Pedro Queiroz
 
-Projeto: Analisador de Investimentos (Opção 1)
+**Projeto:** Analisador de Investimentos
 
-1. Problema
+---
 
-O mercado de software exige que a alocação da equipe de desenvolvimento traga o maior retorno possível para a empresa. Nossa equipe precisa decidir estrategicamente sobre o timing de uma nova funcionalidade (ex: "Módulo de Exportação Avançada"). O problema central é definir se é mais vantajoso financeiramente "Desenvolver Agora" (alocando capital imediato) ou "Adiar a Funcionalidade" para focar em outras demandas, considerando que o atraso posterga os custos, mas também atrasa a entrada das receitas geradas por essa feature.
+## 1. Problema
 
-2. Cenário Analisado e Premissas
+O mercado de software exige que a alocação da equipe de desenvolvimento traga o maior retorno possível para a empresa. Nossa equipe precisa decidir estrategicamente sobre o timing de uma nova funcionalidade (ex: **"Módulo de Exportação Avançada"**).
 
-Para a análise comparativa, estipulamos uma Taxa Mínima de Atratividade (TMA) de 10% ao período e um horizonte de avaliação de 5 períodos.
+O problema central é definir se é mais vantajoso financeiramente **"Desenvolver Agora"** (alocando capital imediato) ou **"Adiar a Funcionalidade"** para focar em outras demandas, considerando que o atraso posterga os custos, mas também atrasa a entrada das receitas geradas por essa feature.
 
-Alternativa A (Desenvolver Agora)
+---
 
-Exige um investimento de R$ 25.000,00 no momento zero (hoje).
+## 2. Cenário Analisado e Premissas
 
-Gera um único e grande fluxo de receita de R$ 45.000,00 no final do 5º período.
+Para a análise comparativa, estipulamos uma **Taxa Mínima de Atratividade (TMA) de 10% ao período** e um **horizonte de avaliação de 5 períodos**.
 
-Alternativa B (Adiar Funcionalidade)
+### Alternativa A — Desenvolver Agora
 
-A equipe opta por uma versão reduzida ou adiada que custa menos: investimento de R$ 10.000,00 no momento zero.
+Exige um investimento de **R$ 25.000,00** no momento zero (hoje).
 
-Gera um fluxo antecipado, mas menor: receita de R$ 15.000,00 já no 3º período, sem fluxos adicionais depois disso.
+Gera um único e grande fluxo de receita de **R$ 45.000,00** no final do 5º período.
 
-3. Indicadores Utilizados
+### Alternativa B — Adiar Funcionalidade
 
-O indicador decisório utilizado foi o Valor Presente Líquido (VPL). O VPL é a ferramenta padrão de Engenharia Econômica por descontar o efeito da inflação/custos de capital ao longo do tempo. O critério de aceite é VPL > 0, e a regra de escolha é a alternativa que produzir o maior VPL.
+A equipe opta por uma versão reduzida ou adiada que custa menos: investimento de **R$ 10.000,00** no momento zero.
 
-Resultado dos Indicadores no cenário base:
+Gera um fluxo antecipado, mas menor: receita de **R$ 15.000,00** já no 3º período, sem fluxos adicionais depois disso.
 
-VPL da Alternativa A: R$ 2.941,46
+---
 
-VPL da Alternativa B: R$ 1.907,48
+## 3. Indicadores Utilizados
 
-4. Alternativa Defendida
+O indicador decisório utilizado foi o **Valor Presente Líquido (VPL)**.
 
-A alternativa defendida é a Alternativa A (Desenvolver Agora).
+O VPL é a ferramenta padrão de Engenharia Econômica por descontar o efeito da inflação/custos de capital ao longo do tempo.
 
-Justificativa: Apesar de exigir um desembolso de capital muito maior no momento zero (R$ 25 mil contra R$ 10 mil), o grande benefício financeiro gerado ao final do ciclo compensa a espera e supera o custo de oportunidade (10% ao período). A Alternativa A agrega aproximadamente R$ 1.033,98 a mais de valor líquido à empresa do que a Alternativa B.
+O critério de aceite é **VPL > 0**, e a regra de escolha é a alternativa que produzir o **maior VPL**.
 
-5. Principal Risco
+### Resultado dos Indicadores no cenário base
 
-O principal risco dessa decisão está associado ao "Tempo". Como o retorno financeiro da Alternativa A está todo concentrado no último período (Mês 5), estamos expostos ao risco de execução e aceitação de mercado. Se houver atrasos na engenharia que empurrem o lançamento para o Mês 6, ou se o mercado não aderir à funcionalidade gerando uma receita menor que os 45 mil previstos, o projeto pode rapidamente se tornar inviável (VPL negativo).
+**VPL da Alternativa A:** R$ 2.941,46
 
-6. Condição que Mudaria a Decisão
+**VPL da Alternativa B:** R$ 1.907,48
 
-A decisão mudaria em favor da Alternativa B sob as seguintes condições de sensibilidade:
+---
 
-A) Aumento na Taxa de Desconto (Custo de Capital)
+## 4. Alternativa Defendida
 
-Se a taxa de atratividade da empresa subir de 10% para cerca de 13%, o VPL da Alternativa A cai drasticamente e fica inferior ao da Alternativa B. Como o lucro da "A" está muito distante (período 5), juros mais altos desidratam severamente o dinheiro futuro. O lucro da "B" está mais próximo (período 3), sofrendo menos desconto.
+A alternativa defendida é a **Alternativa A (Desenvolver Agora)**.
 
-B) Cenário Pessimista de Receita
+**Justificativa:** Apesar de exigir um desembolso de capital muito maior no momento zero (R$ 25 mil contra R$ 10 mil), o grande benefício financeiro gerado ao final do ciclo compensa a espera e supera o custo de oportunidade (10% ao período).
 
-Utilizando a ferramenta construída pela equipe, ao aplicarmos um Cenário Pessimista que reduza a receita em apenas 10% (de R$ 45.000 para R$ 40.500 na Alt A), o VPL da Alternativa A despenca para - R$ 180,63 (destruição de valor), enquanto a Alternativa B, mesmo caindo, ainda se manteria positiva ou menos arriscada. Portanto, se a equipe comercial não tiver absoluta certeza da adoção da feature no Mês 5, Adiar (Alt B) seria a decisão mais segura.
+A Alternativa A agrega aproximadamente **R$ 1.033,98 a mais de valor líquido à empresa** do que a Alternativa B.
+
+---
+
+## 5. Principal Risco
+
+O principal risco dessa decisão está associado ao **"Tempo"**.
+
+Como o retorno financeiro da Alternativa A está todo concentrado no último período (Mês 5), estamos expostos ao risco de execução e aceitação de mercado.
+
+Se houver atrasos na engenharia que empurrem o lançamento para o Mês 6, ou se o mercado não aderir à funcionalidade gerando uma receita menor que os 45 mil previstos, o projeto pode rapidamente se tornar inviável (**VPL negativo**).
+
+---
+
+## 6. Condição que Mudaria a Decisão
+
+A decisão mudaria em favor da **Alternativa B** sob as seguintes condições de sensibilidade:
+
+### A) Aumento na Taxa de Desconto (Custo de Capital)
+
+Se a taxa de atratividade da empresa subir de **10% para cerca de 13%**, o VPL da Alternativa A cai drasticamente e fica inferior ao da Alternativa B.
+
+Como o lucro da "A" está muito distante (período 5), juros mais altos desidratam severamente o dinheiro futuro. O lucro da "B" está mais próximo (período 3), sofrendo menos desconto.
+
+### B) Cenário Pessimista de Receita
+
+Utilizando a ferramenta construída pela equipe, ao aplicarmos um Cenário Pessimista que reduza a receita em apenas **10%** (de R$ 45.000 para R$ 40.500 na Alt A), o VPL da Alternativa A despenca para **- R$ 180,63 (destruição de valor)**, enquanto a Alternativa B, mesmo caindo, ainda se manteria positiva ou menos arriscada.
+
+Portanto, se a equipe comercial não tiver absoluta certeza da adoção da feature no Mês 5, **Adiar (Alt B)** seria a decisão mais segura.
